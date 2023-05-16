@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.2" packageId="a37cc4ed-8bc9-4c2b-830b-25dc11756f16" system="uuid" xsi:schemaLocation="https://eml.ecoinformatics.org/eml-2.2.0 https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd">
+  <dataset>
+    <title>Developing a Geospatial Model for Kelp Forest Cultivation and Restoration, Santa Barbara Channel, 2014-2022</title>
+    <creator>
+      <individualName>
+        <givenName>Erika</givenName>
+        <surName>Egg</surName>
+      </individualName>
+      <electronicMailAddress>egg@bren.ucsb.edu</electronicMailAddress>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Jessica</givenName>
+        <surName>French</surName>
+      </individualName>
+      <electronicMailAddress>jfrench@bren.ucsb.edu</electronicMailAddress>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Javier</givenName>
+        <surName>Patrón</surName>
+      </individualName>
+      <electronicMailAddress>jpatron@bren.ucsb.edu</electronicMailAddress>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Elke</givenName>
+        <surName>Windschitl</surName>
+      </individualName>
+      <electronicMailAddress>elke@bren.ucsb.edu</electronicMailAddress>
+    </creator>
+    <pubDate>2023</pubDate>
+    <abstract>
+      <para>
+    Kelp forests are some of the most productive and biodiverse marine
+    ecosystems in the world but have experienced steep declines in
+    health and abundance in the past decade. These declines have
+    increased the urgency to develop innovative strategies and tools for
+    kelp forest cultivation and restoration. This project aims to
+    address this need by creating a synthesized dataset and an
+    interactive map linking trends in water quality, oceanographic
+    conditions, and nutrient biogeochemistry to kelp forest health.
+    Ocean Rainforest, a local Santa Barbara seaweed aquaculture farm,
+    was interested in the development of such a tool to better
+    understand the environmental conditions surrounding the growth of
+    kelp for their business. Additionally, this tool helps to identify
+    other areas in the Santa Barbara Channel (SBC) that are suitable for
+    restoration or citing of new farms. The final tool identifies
+    factors essential for healthy kelp forests around the SBC, and
+    generates visualizations that highlight the areas with the most
+    potential for seaweed aquaculture and restoration.
+  </para>
+    </abstract>
+    <keywordSet>
+      <keyword>kelp</keyword>
+      <keyword>geospatial</keyword>
+      <keyword>cultivation</keyword>
+      <keyword>restoration</keyword>
+      <keyword>coast</keyword>
+      <keyword>ocean</keyword>
+      <keyword>nutrients</keyword>
+      <keyword>sea surface temperature</keyword>
+      <keyword>depth</keyword>
+    </keywordSet>
+    <intellectualRights>Creative Commons Attribution 4.0 International License</intellectualRights>
+    <coverage>
+      <geographicCoverage>
+        <geographicDescription>Santa Barbara Channel, Santa Barbara, California, United States</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-120.65</westBoundingCoordinate>
+          <eastBoundingCoordinate>-118.8</eastBoundingCoordinate>
+          <northBoundingCoordinate>34.59</northBoundingCoordinate>
+          <southBoundingCoordinate>33.85</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>2014-01-01</calendarDate>
+          </beginDate>
+          <endDate>
+            <calendarDate>2022-12-31</calendarDate>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+      <taxonomicCoverage>
+        <taxonomicClassification>
+          <taxonRankName>Species</taxonRankName>
+        </taxonomicClassification>
+      </taxonomicCoverage>
+    </coverage>
+    <contact>
+      <individualName>
+        <givenName>Erika</givenName>
+        <surName>Egg</surName>
+      </individualName>
+      <organizationName>University of California, Santa Barbara</organizationName>
+      <electronicMailAddress>egg@bren.ucsb.edu</electronicMailAddress>
+    </contact>
+    <contact>
+      <individualName>
+        <givenName>Jessica</givenName>
+        <surName>French</surName>
+      </individualName>
+      <organizationName>University of California, Santa Barbara</organizationName>
+      <electronicMailAddress>jfrench@bren.ucsb.edu</electronicMailAddress>
+    </contact>
+    <contact>
+      <individualName>
+        <givenName>Javier</givenName>
+        <surName>Patrón</surName>
+      </individualName>
+      <organizationName>University of California, Santa Barbara</organizationName>
+      <electronicMailAddress>jpatron@bren.ucsb.edu</electronicMailAddress>
+    </contact>
+    <contact>
+      <individualName>
+        <givenName>Elke</givenName>
+        <surName>Windschitl</surName>
+      </individualName>
+      <organizationName>University of California, Santa Barbara</organizationName>
+      <electronicMailAddress>elke@bren.ucsb.edu</electronicMailAddress>
+    </contact>
+    <methods>
+      <methodStep>
+        <description>
+          <para>
+    Our data products were derived from publicly available data sources:
+  </para>
+          <para>
+    SST:
+    https://podaac.jpl.nasa.gov/dataset/MUR-JPL-L4-GLOB-v4.1?ids=Keywords&amp;amp;values=Oceans:Ocean%20Temperature&amp;amp;provider=POCLOUD
+  </para>
+          <para>
+    Depth: https://www.ncei.noaa.gov/products/etopo-global-relief-model
+  </para>
+          <para>
+    Kelp:
+    https://sbclter.msi.ucsb.edu/data/catalog/package/?package=knb-lter-sbc.74
+  </para>
+          <para>
+    Nutrients: LTER Bottle:
+    https://sbclter.msi.ucsb.edu/data/catalog/package/?package=knb-lter-sbc.10
+  </para>
+          <para>
+    LTER Waves:
+    https://sbclter.msi.ucsb.edu/data/catalog/package/?package=knb-lter-sbc.144
+  </para>
+          <para>
+    CalCOFI:
+    https://calcofi.org/data/oceanographic-data/bottle-database/
+  </para>
+          <para>
+    USGS:https://www.sciencebase.gov/catalog/item/62a7ac5ad34ec53d2770c81f
+    and
+    https://www.sciencebase.gov/catalog/item/62aa40bad34ec53d277115ce
+  </para>
+          <para>
+    Plumes and Blooms: http://www.oceancolor.ucsb.edu/plumes_and_blooms/
+  </para>
+          <para>
+    This link provides a list all files contained in the dataset, with a
+    brief description of their content.
+  </para>
+          <para>
+    Link:
+    https://docs.google.com/spreadsheets/d/1HR_xrE1kTqQGN9MN0-n7XIuDMotM1v1e56kE6-YUFT4/edit#gid=0
+  </para>
+          <para>&lt;emphasis role="strong"&gt;METHODOLOGICAL INFORMATION&lt;/emphasis&gt;</para>
+          <para>
+    Description of methods used for collection/generation of data:
+  </para>
+          <para>
+    See links above and information below on how data were joined.
+  </para>
+          <para>
+    Methods for processing the data:
+  </para>
+          <para>
+    SST: 1. Use a for loop to create a raster brick that calculates the
+    mean temperature for each quarter. This for loop does: a. Read in
+    each image. b. Convert the temperature values from Kelvin to
+    Celsius. c. Stack the images into a raster stack. d. Calculate the
+    mean temperature value for each pixel. 2. Create a function that
+    takes the values of the quarters and years of interest. Use the
+    function to create a raster brick with all 36 rasters (4 quarters
+    per 9 years from 2014-2022). 3. Create a function that splits and
+    categorizes the quarters so that we can calculate the mean
+    temperature for each category.
+  </para>
+          <para>
+    DEPTH: 1. Wrangled into a tidy format 2. Filtered to time frame of
+    2014-2022 3. Mask applied to meet 0.008° x 0.008° spatial
+    resolution, 33.85°- 34.59°N, 118.8°- 120.65°W extent &amp;amp; position,
+    coordinate reference system WGS 84
+  </para>
+          <para>
+    KELP AREA &amp;amp; BIOMASS: 1. Get area and biomass information from
+    the raw netCDF using a for loop, limiting to our time period and
+    area of interest 2. Generate a data frame with both variables’
+    information 3. Turn this into a spatial data frame and rasterize
+    area and biomass separately into two rasterStacks 4. Aggregate these
+    two rasterStacks closer to the correct resolution by summing, and
+    then resample so that the mask can be applied 5. Mask applied to
+    meet 0.008° x 0.008° spatial resolution, 33.85°- 34.59°N, 118.8°-
+    120.65°W extent &amp;amp; position, coordinate reference system WGS 84
+  </para>
+          <para>
+    NUTRIENTS: 1. Wrangled into a tidy format 2. Filtered to time frame
+    of 2014-2022 3. Joined into one data frame 4. Interpolated using
+    inverse distance weighting with an inverse distance power of 1 and
+    maximum distance parameter of 0.08° (approx. 10 km) on phosphate,
+    ammonium, and combined nitrate and nitrite point data. The scope of
+    interpolation was limited to 5 km off the Santa Barbara Coast to
+    ensure dense enough data coverage. 5. Mask applied to meet 0.008° x
+    0.008° spatial resolution, 33.85°- 34.59°N, 118.8°- 120.65°W extent
+    &amp;amp; position, coordinate reference system WGS 84
+  </para>
+          <para>
+    Instrument- or software-specific information needed to interpret the
+    data:
+  </para>
+          <para>
+    R version 4.2.2 RStudio Version: 2023.03.0+386 "Cherry
+    Blossom" Release (3c53477afb13ab959aeb5b34df1f10c237b256c3,
+    2023-03-09) for macOS Mozilla/5.0 (Macintosh; Intel Mac OS X
+    10_15_7) AppleWebKit/537.36 (KHTML, like Gecko)
+    RStudio/2023.03.0+386 Chrome/108.0.5359.179 Electron/22.0.3
+    Safari/537.36 QGIS Version: 3.28.3-Firenze
+  </para>
+          <para>
+    Standards and calibration information, if appropriate: NA
+  </para>
+          <para>
+    Environmental/experimental conditions: NA
+  </para>
+          <para>
+    Describe any quality-assurance procedures performed on the data: See
+    original data sources for individual quality-assurance procedures.
+  </para>
+          <para>
+    People involved with sample collection, processing, analysis and/or
+    submission: See original data sources for individual sample
+    collection information. For data retrieval and synthesis, the
+    following were involved: Erika Egg (UCSB) Jessica French (UCSB)
+    Javier Patron (UCSB) Elke Windschitl (UCSB)
+  </para>
+        </description>
+      </methodStep>
+    </methods>
+    <dataTable>
+      <entityName>synthesized_dataset.csv</entityName>
+      <entityDescription>CSV containing observed point values for nutrients and SST, with depth and kelp area/biomass corresponding to the raster cell that the point intersects.</entityDescription>
+      <physical>
+        <objectName>synthesized_dataset.csv</objectName>
+        <size unit="bytes">369782</size>
+        <authentication method="MD5">04846a31d015f4fa23065250e627496f</authentication>
+        <dataFormat>
+          <textFormat>
+            <recordDelimiter>
+</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>lat</attributeName>
+          <attributeDefinition>latitude of the original observation</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <interval>
+              <unit>
+                <standardUnit>degree</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </interval>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>lon</attributeName>
+          <attributeDefinition>longitude of the original observation</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <interval>
+              <unit>
+                <standardUnit>degree</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </interval>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>year</attributeName>
+          <attributeDefinition>year of the observation</attributeDefinition>
+          <storageType>date</storageType>
+          <measurementScale>
+            <dateTime>
+              <formatString>YYYY</formatString>
+              <dateTimeDomain/>
+            </dateTime>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>quarter</attributeName>
+          <attributeDefinition>quarter that the observation was made in</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>temp</attributeName>
+          <attributeDefinition>sea surface temperature from the nutrients data set: observed values that were measured out on the water</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <interval>
+              <unit>
+                <standardUnit>celsius</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </interval>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>nitrate</attributeName>
+          <attributeDefinition>observed nitrate value</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>micromolePerLiter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>nitrite</attributeName>
+          <attributeDefinition>observed nitrite value</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>micromolePerLiter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>nitrate_nitrite</attributeName>
+          <attributeDefinition>observed nitrate_nitrite value</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>micromolePerLiter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>phosphate</attributeName>
+          <attributeDefinition>observed phosphate value</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>micromolePerLiter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>ammonium</attributeName>
+          <attributeDefinition>observed ammonium or ammonia value</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>micromolePerLiter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>sst</attributeName>
+          <attributeDefinition>remotely sensed sea surface temperature from GRHSST.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <interval>
+              <unit>
+                <standardUnit>celsius</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </interval>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>nutrient_source</attributeName>
+          <attributeDefinition>the source of the original observation for nutrients</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Any text</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>depth</attributeName>
+          <attributeDefinition>depth measurement of the raster cell that the point intersects</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>meter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>kelp_area</attributeName>
+          <attributeDefinition>kelp area measurement of the raster cell that the point intersects</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>meterSquared</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>kelp_biomass</attributeName>
+          <attributeDefinition>kelp biomass of the raster cell that the point intersects</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>kilogram</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>whole</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+  </dataset>
+</eml:eml>

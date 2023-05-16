@@ -1,0 +1,407 @@
+{
+  "@context": {
+    "@vocab": "https://eml.ecoinformatics.org/eml-2.2.0/",
+    "eml": "https://eml.ecoinformatics.org/eml-2.2.0/",
+    "xsi": "http://www.w3.org/2001/XMLSchema-instance/",
+    "xml": "http://www.w3.org/XML/1998/namespace",
+    "stmml": "http://www.xml-cml.org/schema/stmml-1.2/",
+    "id": "@id",
+    "@base": "eml://"
+  },
+  "@type": "EML",
+  "dataset": {
+    "title": "Developing a Geospatial Model for Kelp Forest Cultivation and Restoration, Santa Barbara Channel, 2014-2022",
+    "pubDate": "2023",
+    "abstract": {
+      "para": "\n    Kelp forests are some of the most productive and biodiverse marine\n    ecosystems in the world but have experienced steep declines in\n    health and abundance in the past decade. These declines have\n    increased the urgency to develop innovative strategies and tools for\n    kelp forest cultivation and restoration. This project aims to\n    address this need by creating a synthesized dataset and an\n    interactive map linking trends in water quality, oceanographic\n    conditions, and nutrient biogeochemistry to kelp forest health.\n    Ocean Rainforest, a local Santa Barbara seaweed aquaculture farm,\n    was interested in the development of such a tool to better\n    understand the environmental conditions surrounding the growth of\n    kelp for their business. Additionally, this tool helps to identify\n    other areas in the Santa Barbara Channel (SBC) that are suitable for\n    restoration or citing of new farms. The final tool identifies\n    factors essential for healthy kelp forests around the SBC, and\n    generates visualizations that highlight the areas with the most\n    potential for seaweed aquaculture and restoration.\n  "
+    },
+    "keywordSet": {
+      "keyword": [
+        "kelp",
+        "geospatial",
+        "cultivation",
+        "restoration",
+        "coast",
+        "ocean",
+        "nutrients",
+        "sea surface temperature",
+        "depth"
+      ]
+    },
+    "intellectualRights": "Creative Commons Attribution 4.0 International License",
+    "coverage": {
+      "geographicCoverage": {
+        "geographicDescription": "Santa Barbara Channel, Santa Barbara, California, United States",
+        "boundingCoordinates": {
+          "westBoundingCoordinate": "-120.65",
+          "eastBoundingCoordinate": "-118.8",
+          "northBoundingCoordinate": "34.59",
+          "southBoundingCoordinate": "33.85"
+        }
+      },
+      "temporalCoverage": {
+        "rangeOfDates": {
+          "beginDate": {
+            "calendarDate": "2014-01-01"
+          },
+          "endDate": {
+            "calendarDate": "2022-12-31"
+          }
+        }
+      },
+      "taxonomicCoverage": {
+        "taxonomicClassification": {
+          "taxonRankName": "Species"
+        }
+      }
+    },
+    "methods": {
+      "methodStep": {
+        "description": {
+          "para": [
+            "\n    Our data products were derived from publicly available data sources:\n  ",
+            "\n    SST:\n    https://podaac.jpl.nasa.gov/dataset/MUR-JPL-L4-GLOB-v4.1?ids=Keywords&amp;amp;values=Oceans:Ocean%20Temperature&amp;amp;provider=POCLOUD\n  ",
+            "\n    Depth: https://www.ncei.noaa.gov/products/etopo-global-relief-model\n  ",
+            "\n    Kelp:\n    https://sbclter.msi.ucsb.edu/data/catalog/package/?package=knb-lter-sbc.74\n  ",
+            "\n    Nutrients: LTER Bottle:\n    https://sbclter.msi.ucsb.edu/data/catalog/package/?package=knb-lter-sbc.10\n  ",
+            "\n    LTER Waves:\n    https://sbclter.msi.ucsb.edu/data/catalog/package/?package=knb-lter-sbc.144\n  ",
+            "\n    CalCOFI:\n    https://calcofi.org/data/oceanographic-data/bottle-database/\n  ",
+            "\n    USGS:https://www.sciencebase.gov/catalog/item/62a7ac5ad34ec53d2770c81f\n    and\n    https://www.sciencebase.gov/catalog/item/62aa40bad34ec53d277115ce\n  ",
+            "\n    Plumes and Blooms: http://www.oceancolor.ucsb.edu/plumes_and_blooms/\n  ",
+            "\n    This link provides a list all files contained in the dataset, with a\n    brief description of their content.\n  ",
+            "\n    Link:\n    https://docs.google.com/spreadsheets/d/1HR_xrE1kTqQGN9MN0-n7XIuDMotM1v1e56kE6-YUFT4/edit#gid=0\n  ",
+            "&lt;emphasis role=\"strong\"&gt;METHODOLOGICAL INFORMATION&lt;/emphasis&gt;",
+            "\n    Description of methods used for collection/generation of data:\n  ",
+            "\n    See links above and information below on how data were joined.\n  ",
+            "\n    Methods for processing the data:\n  ",
+            "\n    SST: 1. Use a for loop to create a raster brick that calculates the\n    mean temperature for each quarter. This for loop does: a. Read in\n    each image. b. Convert the temperature values from Kelvin to\n    Celsius. c. Stack the images into a raster stack. d. Calculate the\n    mean temperature value for each pixel. 2. Create a function that\n    takes the values of the quarters and years of interest. Use the\n    function to create a raster brick with all 36 rasters (4 quarters\n    per 9 years from 2014-2022). 3. Create a function that splits and\n    categorizes the quarters so that we can calculate the mean\n    temperature for each category.\n  ",
+            "\n    DEPTH: 1. Wrangled into a tidy format 2. Filtered to time frame of\n    2014-2022 3. Mask applied to meet 0.008° x 0.008° spatial\n    resolution, 33.85°- 34.59°N, 118.8°- 120.65°W extent &amp;amp; position,\n    coordinate reference system WGS 84\n  ",
+            "\n    KELP AREA &amp;amp; BIOMASS: 1. Get area and biomass information from\n    the raw netCDF using a for loop, limiting to our time period and\n    area of interest 2. Generate a data frame with both variables’\n    information 3. Turn this into a spatial data frame and rasterize\n    area and biomass separately into two rasterStacks 4. Aggregate these\n    two rasterStacks closer to the correct resolution by summing, and\n    then resample so that the mask can be applied 5. Mask applied to\n    meet 0.008° x 0.008° spatial resolution, 33.85°- 34.59°N, 118.8°-\n    120.65°W extent &amp;amp; position, coordinate reference system WGS 84\n  ",
+            "\n    NUTRIENTS: 1. Wrangled into a tidy format 2. Filtered to time frame\n    of 2014-2022 3. Joined into one data frame 4. Interpolated using\n    inverse distance weighting with an inverse distance power of 1 and\n    maximum distance parameter of 0.08° (approx. 10 km) on phosphate,\n    ammonium, and combined nitrate and nitrite point data. The scope of\n    interpolation was limited to 5 km off the Santa Barbara Coast to\n    ensure dense enough data coverage. 5. Mask applied to meet 0.008° x\n    0.008° spatial resolution, 33.85°- 34.59°N, 118.8°- 120.65°W extent\n    &amp;amp; position, coordinate reference system WGS 84\n  ",
+            "\n    Instrument- or software-specific information needed to interpret the\n    data:\n  ",
+            "\n    R version 4.2.2 RStudio Version: 2023.03.0+386 \"Cherry\n    Blossom\" Release (3c53477afb13ab959aeb5b34df1f10c237b256c3,\n    2023-03-09) for macOS Mozilla/5.0 (Macintosh; Intel Mac OS X\n    10_15_7) AppleWebKit/537.36 (KHTML, like Gecko)\n    RStudio/2023.03.0+386 Chrome/108.0.5359.179 Electron/22.0.3\n    Safari/537.36 QGIS Version: 3.28.3-Firenze\n  ",
+            "\n    Standards and calibration information, if appropriate: NA\n  ",
+            "\n    Environmental/experimental conditions: NA\n  ",
+            "\n    Describe any quality-assurance procedures performed on the data: See\n    original data sources for individual quality-assurance procedures.\n  ",
+            "\n    People involved with sample collection, processing, analysis and/or\n    submission: See original data sources for individual sample\n    collection information. For data retrieval and synthesis, the\n    following were involved: Erika Egg (UCSB) Jessica French (UCSB)\n    Javier Patron (UCSB) Elke Windschitl (UCSB)\n  "
+          ]
+        }
+      }
+    },
+    "dataTable": {
+      "entityName": "synthesized_dataset.csv",
+      "entityDescription": "CSV containing observed point values for nutrients and SST, with depth and kelp area/biomass corresponding to the raster cell that the point intersects.",
+      "physical": {
+        "objectName": "synthesized_dataset.csv",
+        "size": {
+          "unit": "bytes",
+          "size": "369782"
+        },
+        "authentication": {
+          "method": "MD5",
+          "authentication": "04846a31d015f4fa23065250e627496f"
+        },
+        "dataFormat": {
+          "textFormat": {
+            "recordDelimiter": "\n",
+            "attributeOrientation": "column",
+            "simpleDelimited": {
+              "fieldDelimiter": ","
+            }
+          }
+        }
+      },
+      "attributeList": {
+        "attribute": [
+          {
+            "attributeName": "lat",
+            "attributeDefinition": "latitude of the original observation",
+            "storageType": "float",
+            "measurementScale": {
+              "interval": {
+                "unit": {
+                  "standardUnit": "degree"
+                },
+                "numericDomain": {
+                  "numberType": "real"
+                }
+              }
+            }
+          },
+          {
+            "attributeName": "lon",
+            "attributeDefinition": "longitude of the original observation",
+            "storageType": "float",
+            "measurementScale": {
+              "interval": {
+                "unit": {
+                  "standardUnit": "degree"
+                },
+                "numericDomain": {
+                  "numberType": "real"
+                }
+              }
+            }
+          },
+          {
+            "attributeName": "year",
+            "attributeDefinition": "year of the observation",
+            "storageType": "date",
+            "measurementScale": {
+              "dateTime": {
+                "formatString": "YYYY",
+                "dateTimeDomain": []
+              }
+            }
+          },
+          {
+            "attributeName": "quarter",
+            "attributeDefinition": "quarter that the observation was made in",
+            "storageType": "float",
+            "measurementScale": {
+              "ratio": {
+                "unit": {
+                  "standardUnit": "dimensionless"
+                },
+                "numericDomain": {
+                  "numberType": "whole"
+                }
+              }
+            }
+          },
+          {
+            "attributeName": "temp",
+            "attributeDefinition": "sea surface temperature from the nutrients data set: observed values that were measured out on the water",
+            "storageType": "float",
+            "measurementScale": {
+              "interval": {
+                "unit": {
+                  "standardUnit": "celsius"
+                },
+                "numericDomain": {
+                  "numberType": "real"
+                }
+              }
+            }
+          },
+          {
+            "attributeName": "nitrate",
+            "attributeDefinition": "observed nitrate value",
+            "storageType": "float",
+            "measurementScale": {
+              "ratio": {
+                "unit": {
+                  "standardUnit": "micromolePerLiter"
+                },
+                "numericDomain": {
+                  "numberType": "real"
+                }
+              }
+            }
+          },
+          {
+            "attributeName": "nitrite",
+            "attributeDefinition": "observed nitrite value",
+            "storageType": "float",
+            "measurementScale": {
+              "ratio": {
+                "unit": {
+                  "standardUnit": "micromolePerLiter"
+                },
+                "numericDomain": {
+                  "numberType": "real"
+                }
+              }
+            }
+          },
+          {
+            "attributeName": "nitrate_nitrite",
+            "attributeDefinition": "observed nitrate_nitrite value",
+            "storageType": "float",
+            "measurementScale": {
+              "ratio": {
+                "unit": {
+                  "standardUnit": "micromolePerLiter"
+                },
+                "numericDomain": {
+                  "numberType": "real"
+                }
+              }
+            }
+          },
+          {
+            "attributeName": "phosphate",
+            "attributeDefinition": "observed phosphate value",
+            "storageType": "float",
+            "measurementScale": {
+              "ratio": {
+                "unit": {
+                  "standardUnit": "micromolePerLiter"
+                },
+                "numericDomain": {
+                  "numberType": "real"
+                }
+              }
+            }
+          },
+          {
+            "attributeName": "ammonium",
+            "attributeDefinition": "observed ammonium or ammonia value",
+            "storageType": "float",
+            "measurementScale": {
+              "ratio": {
+                "unit": {
+                  "standardUnit": "micromolePerLiter"
+                },
+                "numericDomain": {
+                  "numberType": "real"
+                }
+              }
+            }
+          },
+          {
+            "attributeName": "sst",
+            "attributeDefinition": "remotely sensed sea surface temperature from GRHSST.",
+            "storageType": "float",
+            "measurementScale": {
+              "interval": {
+                "unit": {
+                  "standardUnit": "celsius"
+                },
+                "numericDomain": {
+                  "numberType": "real"
+                }
+              }
+            }
+          },
+          {
+            "attributeName": "nutrient_source",
+            "attributeDefinition": "the source of the original observation for nutrients",
+            "storageType": "string",
+            "measurementScale": {
+              "nominal": {
+                "nonNumericDomain": {
+                  "textDomain": {
+                    "definition": "Any text"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "attributeName": "depth",
+            "attributeDefinition": "depth measurement of the raster cell that the point intersects",
+            "storageType": "float",
+            "measurementScale": {
+              "ratio": {
+                "unit": {
+                  "standardUnit": "meter"
+                },
+                "numericDomain": {
+                  "numberType": "real"
+                }
+              }
+            }
+          },
+          {
+            "attributeName": "kelp_area",
+            "attributeDefinition": "kelp area measurement of the raster cell that the point intersects",
+            "storageType": "float",
+            "measurementScale": {
+              "ratio": {
+                "unit": {
+                  "standardUnit": "meterSquared"
+                },
+                "numericDomain": {
+                  "numberType": "whole"
+                }
+              }
+            }
+          },
+          {
+            "attributeName": "kelp_biomass",
+            "attributeDefinition": "kelp biomass of the raster cell that the point intersects",
+            "storageType": "float",
+            "measurementScale": {
+              "ratio": {
+                "unit": {
+                  "standardUnit": "kilogram"
+                },
+                "numericDomain": {
+                  "numberType": "whole"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "creator": [
+      {
+        "individualName": {
+          "givenName": "Erika",
+          "surName": "Egg"
+        },
+        "electronicMailAddress": "egg@bren.ucsb.edu"
+      },
+      {
+        "individualName": {
+          "givenName": "Jessica",
+          "surName": "French"
+        },
+        "electronicMailAddress": "jfrench@bren.ucsb.edu"
+      },
+      {
+        "individualName": {
+          "givenName": "Javier",
+          "surName": "Patrón"
+        },
+        "electronicMailAddress": "jpatron@bren.ucsb.edu"
+      },
+      {
+        "individualName": {
+          "givenName": "Elke",
+          "surName": "Windschitl"
+        },
+        "electronicMailAddress": "elke@bren.ucsb.edu"
+      }
+    ],
+    "contact": [
+      {
+        "individualName": {
+          "givenName": "Erika",
+          "surName": "Egg"
+        },
+        "organizationName": "University of California, Santa Barbara",
+        "electronicMailAddress": "egg@bren.ucsb.edu"
+      },
+      {
+        "individualName": {
+          "givenName": "Jessica",
+          "surName": "French"
+        },
+        "organizationName": "University of California, Santa Barbara",
+        "electronicMailAddress": "jfrench@bren.ucsb.edu"
+      },
+      {
+        "individualName": {
+          "givenName": "Javier",
+          "surName": "Patrón"
+        },
+        "organizationName": "University of California, Santa Barbara",
+        "electronicMailAddress": "jpatron@bren.ucsb.edu"
+      },
+      {
+        "individualName": {
+          "givenName": "Elke",
+          "surName": "Windschitl"
+        },
+        "organizationName": "University of California, Santa Barbara",
+        "electronicMailAddress": "elke@bren.ucsb.edu"
+      }
+    ]
+  },
+  "packageId": "a37cc4ed-8bc9-4c2b-830b-25dc11756f16",
+  "schemaLocation": "https://eml.ecoinformatics.org/eml-2.2.0 https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd",
+  "system": "uuid"
+}
