@@ -5,7 +5,7 @@ library(emld)
 
 # Set title
 
-title <- "Developing a Geospatial Model for Kelp Forest Cultivation and Restoration, Santa Barbara Channel, 2014-2022"
+title <- "Observed value data set for: Developing a Geospatial Model for Kelp Forest Cultivation and Restoration, Santa Barbara Channel, 2014-2022"
 
 # Describing the coverage (geographic and temporal)
 
