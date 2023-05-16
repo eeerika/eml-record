@@ -13,7 +13,7 @@
     "title": "Developing a Geospatial Model for Kelp Forest Cultivation and Restoration, Santa Barbara Channel, 2014-2022",
     "pubDate": "2023",
     "abstract": {
-      "para": "\n    Kelp forests are some of the most productive and biodiverse marine\n    ecosystems in the world but have experienced steep declines in\n    health and abundance in the past decade. These declines have\n    increased the urgency to develop innovative strategies and tools for\n    kelp forest cultivation and restoration. This project aims to\n    address this need by creating a synthesized dataset and an\n    interactive map linking trends in water quality, oceanographic\n    conditions, and nutrient biogeochemistry to kelp forest health.\n    Ocean Rainforest, a local Santa Barbara seaweed aquaculture farm,\n    was interested in the development of such a tool to better\n    understand the environmental conditions surrounding the growth of\n    kelp for their business. Additionally, this tool helps to identify\n    other areas in the Santa Barbara Channel (SBC) that are suitable for\n    restoration or citing of new farms. The final tool identifies\n    factors essential for healthy kelp forests around the SBC, and\n    generates visualizations that highlight the areas with the most\n    potential for seaweed aquaculture and restoration.\n  "
+      "para": "\n    There is a need among those researching kelp forests in the Santa\n    Barbara Channel (SBC) to have a data set that brings together\n    information on ocean nutrients, depth, sea surface temperature,\n    seafloor habitat, kelp area, and kelp biomass. This project creates\n    that data set along with a data pipeline that allows researchers to\n    easily add their own observations or work with the original data\n    sets directly. This project also addresses a need in the kelp\n    aquaculture community for an analysis of giant kelp habitat\n    suitability in the SBC to compare industry site assessments to.\n    Using the maximum entropy species distribution modeling technique,\n    heat maps of relative habitat suitability were created that can be\n    compared to other analyses and have the potential to guide siting\n    future research and cultivation projects. Finally, to aid in\n    communicating this project to a broader audience in the future this\n    project will provide the framework for an interactive web\n    application that can be built upon by future stewards of the\n    project.\n  "
     },
     "keywordSet": {
       "keyword": [
@@ -401,7 +401,7 @@
       }
     ]
   },
-  "packageId": "a37cc4ed-8bc9-4c2b-830b-25dc11756f16",
+  "packageId": "8da7db84-bef5-4200-9741-4f31f0cdf930",
   "schemaLocation": "https://eml.ecoinformatics.org/eml-2.2.0 https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd",
   "system": "uuid"
 }
